@@ -4,7 +4,7 @@ import helmet from 'helmet'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import config from './config'
-import logger from './lib/logger'
+import { logger } from './lib/logger'
 
 const app = express()
 

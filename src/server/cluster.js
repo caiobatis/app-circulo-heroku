@@ -1,7 +1,7 @@
 import cluster from 'cluster'
 import os from 'os'
 import config from './config'
-import logger from './lib/logger'
+import { logger } from './lib/logger'
 import app from './app'
 
 if (cluster.isMaster) {
