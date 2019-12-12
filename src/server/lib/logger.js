@@ -3,7 +3,7 @@ import morgan from 'morgan'
 
 const level = process.env.LOG_LEVEL || 'debug'
 
-const logger = createLogger({
+export const logger = createLogger({
   transports: [
     new winston.transports.Console({
       level,
