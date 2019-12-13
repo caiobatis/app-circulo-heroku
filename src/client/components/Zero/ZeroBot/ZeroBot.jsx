@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import Typist from 'react-typist'
 import { setChat } from '../../../actions/zeroActions'
-// import axios from "axios";
-// import Typist from "react-typist";
+import Cover from '../Cover/Cover'
 import Chat from '../Chat/Chat'
-// import Cover from "../Cover/Cover";
-// import { useSelector, useDispatch } from "react-redux";
-// import { actions } from "../../constants/actionTypes";
 
 import styles from './style.scss'
 
@@ -31,7 +28,7 @@ class ZeroBot extends Component {
   }
 
   render() {
-    const { onChange, questions, received } = this.props
+    const { questions, received } = this.props
     return (
       <div>
         {/* <Cover center time={2000}>

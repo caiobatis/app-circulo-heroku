@@ -77,3 +77,32 @@
     display: block;
   }
 }
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+
+  .suggestion {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    background: #ccc;
+    border-radius: 4px;
+    color: red;
+    cursor: pointer;
+    height: 0;
+    transition: 0.2s all;
+    opacity: 0;
+    padding: 0;
+
+    &.visible {
+      height: auto;
+      opacity: 1;
+      padding: 15px;
+    }
+
+    img {
+      width: 50px;
+    }
+  }
+}

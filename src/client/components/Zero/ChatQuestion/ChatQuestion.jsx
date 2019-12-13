@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from "react";
-import classNames from "classnames";
-import styles from "./styles.scss";
+import React, { useState, useEffect } from 'react'
+import classNames from 'classnames'
+import styles from './styles.scss'
 
 function ChatQuestion(props) {
-  const { content, time = 2000 } = props;
+  const { content, time = 2000, suggestions = [], onSelect } = props
 
-  const [initialItem, setInitialItem] = useState(false);
-  const [isVisible, setVisible] = useState(false);
+  const [initialItem, setInitialItem] = useState(false)
+  const [isVisible, setVisible] = useState(false)
 
-  const questionClasses = classNames(styles.question);
+  const questionClasses = classNames(styles.question)
 
   const ballonClasses = classNames(styles.ballon, {
     [styles.visible]: isVisible && initialItem
-  });
+  })
 
-  const _initial = content.find((_, i) => i === 0);
-  const _content = content.filter((_, i) => i !== 0);
+  const _initial = content.find((_, i) => i === 0)
+  const _content = content.filter((_, i) => i !== 0)
 
   useEffect(() => {
     setTimeout(() => {
-      setInitialItem(_initial);
-    }, time);
-  }, [_initial]);
+      setInitialItem(_initial)
+    }, time)
+  }, [_initial])
 
   useEffect(() => {
-    setVisible(true);
-  }, [initialItem]);
+    setVisible(true)
+  }, [initialItem])
 
   const points = (
     <div className={styles.points}>
@@ -33,7 +33,7 @@ function ChatQuestion(props) {
       <span />
       <span />
     </div>
-  );
+  )
 
   return (
     <div className={questionClasses}>
@@ -45,8 +45,27 @@ function ChatQuestion(props) {
           {item.text}
         </div>
       ))}
+      <div className={styles.suggestions}>
+        {suggestions &&
+          suggestions.map(suggestion => {
+            const suggestionClasses = classNames(styles.suggestion, {
+              [styles.visible]: initialItem
+            })
+
+            return (
+              <div
+                onClick={() => onSelect(suggestion)}
+                className={suggestionClasses}
+                key={suggestion.id}
+              >
+                <img src={suggestion.image} alt="" />
+                <div className={styles.text}>{suggestion.name}</div>
+              </div>
+            )
+          })}
+      </div>
     </div>
-  );
+  )
 }
 
-export default ChatQuestion;
+export default ChatQuestion
