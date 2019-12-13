@@ -1,10 +1,10 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import React from "react";
+import { Helmet } from "react-helmet";
 
 const Head = () => (
   <Helmet>
-    <title>Testing environment</title>
+    <title></title>
   </Helmet>
-)
+);
 
-export default Head
+export default Head;

@@ -1,0 +1,78 @@
+@keyframes opacityChange {
+  from {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.56;
+  }
+
+  to {
+    opacity: 0.8;
+  }
+}
+
+@mixin delayOpacity($delay) {
+  animation-delay: $delay;
+}
+.chatItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .ballon {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    color: #333;
+    margin-top: 2px;
+    height: 0;
+    transition: 0.2s all;
+    opacity: 0;
+    padding: 0;
+
+    &.visible {
+      height: auto;
+      opacity: 1;
+      padding: 15px;
+    }
+  }
+
+  .ballonActive {
+    @extend .ballon;
+    height: auto;
+    opacity: 1;
+    padding: 15px;
+  }
+
+  .points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background: #fff;
+      margin: 2px;
+      opacity: 0.9;
+      animation-duration: 0.5s;
+      animation-name: opacityChange;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+
+      &:nth-child(1) {
+        @include delayOpacity(1s);
+      }
+      &:nth-child(2) {
+        @include delayOpacity(0.8s);
+      }
+      &:nth-child(3) {
+        @include delayOpacity(0.1s);
+      }
+    }
+  }
+
+  .visible {
+    display: block;
+  }
+}

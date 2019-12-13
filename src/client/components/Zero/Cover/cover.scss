@@ -1,0 +1,35 @@
+.cover {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: .8;
+  transition: .4s ease-out;
+  height: 0;
+  overflow: hidden;
+
+  &.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .title {
+      text-align: center;
+    }
+  }
+  &.visible {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+.custom {
+  // background-image: linear-gradient(45deg, rgb(239, 102, 150) 0px, rgb(238, 46, 93) 70%) !important;
+  background-image: linear-gradient(45deg, #ef6692 0px, #ee2e2e 70%) !important;
+}
+
+.title {
+  color: #FFFFFF;
+  margin: 0 20vw;
+}

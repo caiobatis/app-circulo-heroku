@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux'
-import { reducer as formReducer } from 'redux-form'
-import todosReducer from './todosReducer'
+import { combineReducers } from "redux";
+import { reducer as formReducer } from "redux-form";
+import todosReducer from "./todosReducer";
+import chatReducer from "./chatReducer";
 
 const rootReducer = combineReducers({
-  form: formReducer,
-  todosReducer
-})
+	form: formReducer,
+	todosReducer,
+	chatModule: chatReducer
+});
 
-export default rootReducer
+export default rootReducer;

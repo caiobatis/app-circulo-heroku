@@ -1,7 +1,12 @@
-@import '~normalize.css/normalize.css';
+@import "~normalize.css/normalize.css";
 
 body {
   margin: 0;
+  background: #333;
+}
+
+* {
+  font-family: "Comfortaa", cursive;
 }
 
 input:-webkit-autofill,

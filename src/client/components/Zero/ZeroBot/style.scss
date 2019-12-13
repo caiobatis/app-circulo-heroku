@@ -1,0 +1,44 @@
+h1 {
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 7rem !important;
+  line-height: 6rem;
+  letter-spacing: -0.25rem;
+  margin: 0 !important;
+}
+
+h3 {
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  line-height: 6rem;
+  letter-spacing: -0.25rem;
+  margin: 0;
+}
+
+.header {
+  background: #fcfafc;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    .text {
+      color: #fc0740;
+      font-size: 2em;
+      font-weight: 600;
+    }
+
+    img {
+      width: 48px;
+    }
+  }
+}
+
+.container {
+  width: 50vw;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
