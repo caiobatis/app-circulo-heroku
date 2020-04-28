@@ -1,42 +1,23 @@
-## App Circulo Heroku
-
-
-### Documentation
 ---
-#### Requirements
-- Node
-- npm
+description: This is a UI component dev environment for your app.
+---
 
-#### Stack
-- Node
-- Serverless (AWS Lambda + API Gateway + S3)
-- Webpack
-- ES6 (Babel)
-- React
-- React Router
-- Redux / Redux Form
-- PostCSS / SASS
-- Material UI
-- Jest / Enzyme / Chai
+# Welcome to Sunrise
 
-#### Initialization
-```bash
-npm i && npm run dev
+This is a UI component dev environment for your app.
+
+We've added some basic stories inside the  `src/components/Button/button.stories.js`
+
+ A story is a single state of one or more UI components. You can have as many stories as you want. \(Basically a story is like a visual test case.\)
+
+ Just like that, you can add your own components as stories. You can also edit those components and see changes right away. \(Try editing the Button stories located at `{'src/components//.stories.js'}` .\)
+
+ Usually we create stories with smaller UI components in the app. Have a look at the {' '} [Writing Stories](https://storybook.js.org/docs/basics/writing-stories/) {' '} section in Storybook documentation.
+
+```text
+  NOTE:
+  Have a look at the .storybook/webpack.config.js to add webpack loaders and plugins you are using in this project.
 ```
 
-#### Build to production|stage
-```bash
-NODE_ENV=production ENV=production|stage npm run build
-```
 
-#### Testing
-##### Using jest with enzyme and chai (see examples on `./src/client/**/*.spec.js`)
-```bash
-npm test
-npm run test:coverage
-```
 
-#### Deploy to AWS production|stage (with Serverless)
-```bash
-NODE_ENV=production ENV=production|stage npm run serverless:deploy
-```
